@@ -47,20 +47,22 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                            "/", 
-                            "/login", 
-                            "/register", 
-                            "/index.html", 
-                            "/assets/**",
-                            "/@vite/**",
-                            "/node_modules/**",
-                            "/src/**",
-                            "/static/**",
-                            "/favicon.ico",
-                            "/*.js",
-                            "/*.css",
-                            "/*.js.map",
-                            "/*.css.map"
+                                "/",
+                                "/index.html",
+                                "/favicon.ico",
+                                "/assets/**",
+                                "/static/**",
+                                "/js/**",
+                                "/css/**",
+                                "/img/**",
+                                "/@vite/**",
+                                "/node_modules/**",
+                                "/src/**",
+                                "/*.js",
+                                "/*.css",
+                                "/*.js.map",
+                                "/*.css.map",
+                                "/vite.svg"
                         ).permitAll()
                         .requestMatchers("/api/v1/register", "/api/v1/login", "/api/v1/logout").permitAll()
                         .requestMatchers("/api/v1/user/**").hasAnyRole("USER", "ADMIN")
@@ -79,6 +81,7 @@ public class SecurityConfig {
 
         return http.build();
     }
+
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
