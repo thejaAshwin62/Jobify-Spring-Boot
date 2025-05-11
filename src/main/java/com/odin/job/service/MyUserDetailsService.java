@@ -1,5 +1,6 @@
 package com.odin.job.service;
 
+
 import com.odin.job.model.User;
 import com.odin.job.model.UserPrinciple;
 import com.odin.job.repository.UserRepository;
